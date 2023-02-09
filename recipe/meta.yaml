@@ -294,8 +294,10 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: "Microsoft 365 & Microsoft Graph Library for Python"
-  doc_url: 
-  dev_url: 
+  description:
+     "Microsoft 365 & Microsoft Graph Library for Python"
+  doc_url: https://github.com/vgrem/Office365-REST-Python-Client 
+  dev_url: https://github.com/vgrem/Office365-REST-Python-Client/blob/master/README-dev.md
 
 extra:
 
