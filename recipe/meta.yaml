@@ -303,3 +303,8 @@ extra:
     - missing_source
   recipe-maintainers:
     - anaobi
+
+  anaconda-services:
+   ref: https://anaconda.zendesk.com/agent/tickets/32642
+   recipe-maintainers:
+      - ianaobi
