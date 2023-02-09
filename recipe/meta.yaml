@@ -21,6 +21,7 @@ requirements:
     - python
     - pytz
     - requests
+    - wheel
   run:
     - msal
     - python
@@ -290,7 +291,7 @@ about:
   home: "https://github.com/vgrem/Office365-REST-Python-Client"
   license: MIT
   license_family: MIT
-  license_file: 
+  license_file: LICENSE
   summary: "Microsoft 365 & Microsoft Graph Library for Python"
   doc_url: 
   dev_url: 
