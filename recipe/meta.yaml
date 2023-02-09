@@ -286,6 +286,7 @@ test:
   requires:
     - adal
     - pytest
+    - pip
 
 about:
   home: "https://github.com/vgrem/Office365-REST-Python-Client"
