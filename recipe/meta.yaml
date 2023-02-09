@@ -1,0 +1,301 @@
+{% set name = "Office365-REST-Python-Client" %}
+{% set version = "2.3.16" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: a5c97a7ca0a3b9315dc1ac7210e110a00a539d67eb7617d4afb633219de578c2
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+  noarch: python
+
+requirements:
+  host:
+    - msal
+    - pip
+    - python
+    - pytz
+    - requests
+  run:
+    - msal
+    - python
+    - pytz
+    - requests
+
+test:
+  imports:
+    - office365
+    - office365.communications
+    - office365.communications.callrecords
+    - office365.communications.calls
+    - office365.communications.meetings
+    - office365.communications.onlinemeetings
+    - office365.communications.operations
+    - office365.communications.presences
+    - office365.directory
+    - office365.directory.applications
+    - office365.directory.audit
+    - office365.directory.authentication
+    - office365.directory.certificates
+    - office365.directory.extensions
+    - office365.directory.groups
+    - office365.directory.identities
+    - office365.directory.identities.providers
+    - office365.directory.identities.userflows
+    - office365.directory.identities.userflows.b2x
+    - office365.directory.internal
+    - office365.directory.internal.paths
+    - office365.directory.licenses
+    - office365.directory.policies
+    - office365.directory.subscriptions
+    - office365.directory.users
+    - office365.education
+    - office365.external
+    - office365.intune
+    - office365.intune.devices
+    - office365.intune.organizations
+    - office365.onedrive
+    - office365.onedrive.analytics
+    - office365.onedrive.columns
+    - office365.onedrive.contenttypes
+    - office365.onedrive.documentsets
+    - office365.onedrive.driveitems
+    - office365.onedrive.drives
+    - office365.onedrive.files
+    - office365.onedrive.folders
+    - office365.onedrive.internal
+    - office365.onedrive.internal.paths
+    - office365.onedrive.internal.queries
+    - office365.onedrive.listitems
+    - office365.onedrive.lists
+    - office365.onedrive.permissions
+    - office365.onedrive.shares
+    - office365.onedrive.sites
+    - office365.onedrive.termstore
+    - office365.onedrive.versions
+    - office365.onedrive.workbooks
+    - office365.onedrive.workbooks.applications
+    - office365.onedrive.workbooks.charts
+    - office365.onedrive.workbooks.comments
+    - office365.onedrive.workbooks.functions
+    - office365.onedrive.workbooks.names
+    - office365.onedrive.workbooks.operations
+    - office365.onedrive.workbooks.ranges
+    - office365.onedrive.workbooks.tables
+    - office365.onedrive.workbooks.tables.columns
+    - office365.onedrive.workbooks.tables.rows
+    - office365.onedrive.workbooks.worksheets
+    - office365.onenote
+    - office365.onenote.internal
+    - office365.onenote.notebooks
+    - office365.onenote.operations
+    - office365.onenote.pages
+    - office365.onenote.resources
+    - office365.onenote.sectiongroups
+    - office365.onenote.sections
+    - office365.outlook
+    - office365.outlook.calendar
+    - office365.outlook.contacts
+    - office365.outlook.internal
+    - office365.outlook.internal.paths
+    - office365.outlook.internal.queries
+    - office365.outlook.mail
+    - office365.outlook.mail.attachments
+    - office365.outlook.mail.messages
+    - office365.planner
+    - office365.planner.buckets
+    - office365.planner.plans
+    - office365.planner.tasks
+    - office365.project
+    - office365.reports
+    - office365.reports.internal
+    - office365.reports.internal.queries
+    - office365.runtime
+    - office365.runtime.auth
+    - office365.runtime.auth.providers
+    - office365.runtime.auth.providers.templates
+    - office365.runtime.csom
+    - office365.runtime.http
+    - office365.runtime.odata
+    - office365.runtime.odata.v3
+    - office365.runtime.odata.v4
+    - office365.runtime.paths
+    - office365.runtime.queries
+    - office365.runtime.types
+    - office365.search
+    - office365.security
+    - office365.sharepoint
+    - office365.sharepoint.activities
+    - office365.sharepoint.activities.facets
+    - office365.sharepoint.administration
+    - office365.sharepoint.administration.analytics
+    - office365.sharepoint.administration.orgassets
+    - office365.sharepoint.alerts
+    - office365.sharepoint.analytics
+    - office365.sharepoint.appprincipal
+    - office365.sharepoint.apps
+    - office365.sharepoint.attachments
+    - office365.sharepoint.audit
+    - office365.sharepoint.authentication
+    - office365.sharepoint.authpolicy
+    - office365.sharepoint.authpolicy.events
+    - office365.sharepoint.businessdata
+    - office365.sharepoint.campaigns
+    - office365.sharepoint.changes
+    - office365.sharepoint.clientsidecomponent
+    - office365.sharepoint.clientsidecomponent.hostedapps
+    - office365.sharepoint.comments
+    - office365.sharepoint.comments.client
+    - office365.sharepoint.compliance
+    - office365.sharepoint.contentcenter
+    - office365.sharepoint.contentcenter.machinelearning
+    - office365.sharepoint.contenttypes
+    - office365.sharepoint.contenttypes.fieldlinks
+    - office365.sharepoint.customactions
+    - office365.sharepoint.directory
+    - office365.sharepoint.directory.provider
+    - office365.sharepoint.documentmanagement
+    - office365.sharepoint.eventreceivers
+    - office365.sharepoint.excel
+    - office365.sharepoint.features
+    - office365.sharepoint.fields
+    - office365.sharepoint.files
+    - office365.sharepoint.flows
+    - office365.sharepoint.folders
+    - office365.sharepoint.forms
+    - office365.sharepoint.internal
+    - office365.sharepoint.internal.paths
+    - office365.sharepoint.internal.queries
+    - office365.sharepoint.likes
+    - office365.sharepoint.listitems
+    - office365.sharepoint.listitems.caml
+    - office365.sharepoint.lists
+    - office365.sharepoint.logger
+    - office365.sharepoint.marketplace
+    - office365.sharepoint.marketplace.sitecollection
+    - office365.sharepoint.marketplace.sitecollection.appcatalog
+    - office365.sharepoint.marketplace.tenant
+    - office365.sharepoint.marketplace.tenant.appcatalog
+    - office365.sharepoint.microfeed
+    - office365.sharepoint.microservice
+    - office365.sharepoint.migrationcenter
+    - office365.sharepoint.migrationcenter.common
+    - office365.sharepoint.migrationcenter.service
+    - office365.sharepoint.multigeo
+    - office365.sharepoint.navigation
+    - office365.sharepoint.oauth
+    - office365.sharepoint.pageinstrumentation
+    - office365.sharepoint.pages
+    - office365.sharepoint.permissions
+    - office365.sharepoint.permissions.irm
+    - office365.sharepoint.permissions.roles
+    - office365.sharepoint.permissions.roles.assignments
+    - office365.sharepoint.permissions.roles.definitions
+    - office365.sharepoint.policy
+    - office365.sharepoint.portal
+    - office365.sharepoint.portal.groups
+    - office365.sharepoint.portal.home
+    - office365.sharepoint.portal.linkedsites
+    - office365.sharepoint.portal.orglabels
+    - office365.sharepoint.portal.sites
+    - office365.sharepoint.portal.teams
+    - office365.sharepoint.portal.userprofiles
+    - office365.sharepoint.portal.webcontrols
+    - office365.sharepoint.principal
+    - office365.sharepoint.publishing
+    - office365.sharepoint.publishing.diagnostics
+    - office365.sharepoint.publishing.navigation
+    - office365.sharepoint.publishing.pages
+    - office365.sharepoint.publishing.personmagazine
+    - office365.sharepoint.publishing.sites
+    - office365.sharepoint.publishing.sites.communication
+    - office365.sharepoint.publishing.video
+    - office365.sharepoint.pushnotifications
+    - office365.sharepoint.recyclebin
+    - office365.sharepoint.reputationmodel
+    - office365.sharepoint.search
+    - office365.sharepoint.search.administration
+    - office365.sharepoint.search.analytics
+    - office365.sharepoint.search.query
+    - office365.sharepoint.search.query.sort
+    - office365.sharepoint.search.refiner
+    - office365.sharepoint.search.reports
+    - office365.sharepoint.sharing
+    - office365.sharepoint.sharing.invitation
+    - office365.sharepoint.sharing.links
+    - office365.sharepoint.sitedesigns
+    - office365.sharepoint.sitehealth
+    - office365.sharepoint.sites
+    - office365.sharepoint.sitescripts
+    - office365.sharepoint.social
+    - office365.sharepoint.social.feed
+    - office365.sharepoint.social.following
+    - office365.sharepoint.social.microfeed
+    - office365.sharepoint.social.posts
+    - office365.sharepoint.storagemetrics
+    - office365.sharepoint.taxonomy
+    - office365.sharepoint.taxonomy.contenttypesync
+    - office365.sharepoint.teams
+    - office365.sharepoint.tenant
+    - office365.sharepoint.tenant.administration
+    - office365.sharepoint.tenant.administration.audit
+    - office365.sharepoint.tenant.administration.collaboration
+    - office365.sharepoint.tenant.administration.hubsites
+    - office365.sharepoint.tenant.administration.internal
+    - office365.sharepoint.tenant.management
+    - office365.sharepoint.translation
+    - office365.sharepoint.types
+    - office365.sharepoint.ui
+    - office365.sharepoint.ui.applicationpages
+    - office365.sharepoint.ui.applicationpages.peoplepicker
+    - office365.sharepoint.usercustomactions
+    - office365.sharepoint.userprofiles
+    - office365.sharepoint.userprofiles.sharedwithme
+    - office365.sharepoint.utilities
+    - office365.sharepoint.views
+    - office365.sharepoint.viva
+    - office365.sharepoint.webhooks
+    - office365.sharepoint.webparts
+    - office365.sharepoint.webparts.client
+    - office365.sharepoint.webs
+    - office365.sharepoint.workflow
+    - office365.sharepoint.workflowservices
+    - office365.sharepoint.workmanagement
+    - office365.sharepoint.yammer
+    - office365.teams
+    - office365.teams.apps
+    - office365.teams.bots
+    - office365.teams.channels
+    - office365.teams.chats
+    - office365.teams.internal
+    - office365.teams.internal.paths
+    - office365.teams.members
+    - office365.teams.messages
+    - office365.teams.operations
+    - office365.teams.shifts
+    - office365.teams.tabs
+    - office365.todo
+  requires:
+    - adal
+    - pytest
+
+about:
+  home: "https://github.com/vgrem/Office365-REST-Python-Client"
+  license: MIT
+  license_family: MIT
+  license_file: 
+  summary: "Microsoft 365 & Microsoft Graph Library for Python"
+  doc_url: 
+  dev_url: 
+
+extra:
+
+  only_lint:
+    - missing_source
+  recipe-maintainers:
+    - anaobi
