@@ -296,8 +296,8 @@ about:
   summary: "Microsoft 365 & Microsoft Graph Library for Python"
   description:
      "Microsoft 365 & Microsoft Graph Library for Python"
-  doc_url: https://github.com/vgrem/Office-365-REST-Python-Client 
-  dev_url: https://github.com/vgrem/Office-365-REST-Python-Client/blob/master/README-dev.md
+  doc_url: https://github.com/vgrem/Office365-REST-Python-Client 
+  dev_url: https://github.com/vgrem/Office365-REST-Python-Client/blob/master/README-dev.md
 
 extra:
 
